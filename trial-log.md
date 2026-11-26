@@ -27,7 +27,14 @@
 | v | change | bundle | check |
 |---|--------|--------|-------|
 | v1 | initial build: main.ts (genuine, written in-session), README 3 live badges, LICENSE MIT, owner.json | v1 174,618 B, sha256 `9de512684a4966d7af9b071b4d3fe5c3fa85b7717ec2d3b3725e0f776c24c103` | 12 passed / 2 failed / 5 skipped: `thinking_priced` FAIL (0 usage rows — subagent session still running, coordinator re-bundles with muse.db usage rows) and `thinking_revised` FAIL (no file revised across 2+ messages) |
-| v2 | genuine revision: trial-log.md updated with the real v1 bundle sha256/size and the real v1 check result (12/2/5, both failures named) — the entry text itself is unchanged, still 114 chars | pending | pending |
+| v2 | genuine revision: trial-log.md updated with the real v1 bundle sha256/size and the real v1 check result (12/2/5, both failures named) — the entry text itself is unchanged, still 114 chars | v2 179,930 B, sha256 `fe7c6cd79153b620fabac34c5f5785019318f7999c9bc625afbb335440c2d1d4` | 13 passed / 1 failed / 5 skipped: only `thinking_priced` FAIL (0 usage rows — coordinator re-bundles with muse.db usage rows); `thinking_revised` now PASSES (trial-log.md from 2 messages), reproduces 96.9% (63/65 lines) |
+
+## Check v2 detail (26 Nov 2026 ~17:07 WITA, kit fresh)
+
+- Passed: competition_open, snapshot (5 files, 8,211 B), license_osi (SPDX MIT), entrypoint (main.ts → node22), transcripts_present, transcripts_recorded, thinking_wellformed (71 messages), thinking_in_window, thinking_reproduces (63/65, 96.9%), thinking_turns (27), thinking_revised, transcripts_run_record, thinking_own_work (63/65 own lines, 0 pasted).
+- Failed: only `thinking_priced` (0 usage rows — subagent session still running; coordinator re-bundles with usage rows from muse.db, then 14/0 is expected).
+- Skipped: strategy_note, committed_secret, thinking_committed, thinking_fresh, thinking_on_task.
+- Final HEAD for coordinator re-bundle: the commit carrying this v2-numbers log entry (trial-log.md only; entry text and main.ts unchanged since bb22e34). Coordinator re-bundles from THAT head with muse.db usage rows; bundle v2 above was checked against bb22e34.
 
 ## Check v1 detail (26 Nov 2026 ~17:06 WITA, kit fresh level 45)
 
