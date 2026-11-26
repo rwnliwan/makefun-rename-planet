@@ -26,4 +26,12 @@
 
 | v | change | bundle | check |
 |---|--------|--------|-------|
-| v1 | initial build: main.ts (genuine, written in-session), README 3 live badges, LICENSE MIT, owner.json | pending | pending |
+| v1 | initial build: main.ts (genuine, written in-session), README 3 live badges, LICENSE MIT, owner.json | v1 174,618 B, sha256 `9de512684a4966d7af9b071b4d3fe5c3fa85b7717ec2d3b3725e0f776c24c103` | 12 passed / 2 failed / 5 skipped: `thinking_priced` FAIL (0 usage rows — subagent session still running, coordinator re-bundles with muse.db usage rows) and `thinking_revised` FAIL (no file revised across 2+ messages) |
+| v2 | genuine revision: trial-log.md updated with the real v1 bundle sha256/size and the real v1 check result (12/2/5, both failures named) — the entry text itself is unchanged, still 114 chars | pending | pending |
+
+## Check v1 detail (26 Nov 2026 ~17:06 WITA, kit fresh level 45)
+
+- Passed: competition_open, snapshot (5 files, 6,659 B), license_osi (SPDX MIT), entrypoint (main.ts → node22), transcripts_present, transcripts_recorded, thinking_wellformed (63 messages), thinking_in_window, thinking_reproduces (57/59 counted lines, 96.6%; main.ts 25 authored lines), thinking_turns (24), transcripts_run_record, thinking_own_work (57/59 own lines, 0 pasted).
+- Failed: `thinking_priced` (0 usage rows attached — expected for a still-running subagent session; the coordinator attaches rows from muse.db at re-bundle) and `thinking_revised` (fixed by this v2 revision of trial-log.md).
+- Skipped: strategy_note, committed_secret, thinking_committed, thinking_fresh, thinking_on_task.
+- At-submission checks (repo_public, repo_owner, repo_created_after_open, commit_in_repo, duplicate_snapshot) are evaluated by the site at submit; repo is public, owner.json is committed and pushed, commit `246014040b2f45d37af5c3d799cb28b7900a757f` is on origin/main.
